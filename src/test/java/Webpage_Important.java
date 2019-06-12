@@ -2,10 +2,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 
-public class Webpage_Important {
+
+public class Webpage_Important{
     WebDriver driver;
-
-
 
     //testing searchBar by typing a text and press INVIO / ENTER button
     public void searchBarTesting1(){
