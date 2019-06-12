@@ -1,20 +1,20 @@
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
+package homeworkmod3;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
 
 public class Homework {
 
-    WebDriver driver;
+    static WebDriver driver;
 
     @BeforeMethod
     public void setUp() {
         System.setProperty("webdriver.chrome.driver", "C:\\Users\\Gabriel\\Downloads\\chromedriver.exe");
-        driver=new ChromeDriver();
+        driver = new ChromeDriver();
         driver.get("http://automationpractice.com/index.php");
 
         System.out.println("The current url of the webpage: ");
@@ -24,18 +24,17 @@ public class Homework {
 
         driver.manage().window().maximize();
 
-        WebDriverWait wait = new WebDriverWait(driver, 1);
-        //wait.until(ExpectedConditions.elementToBeClickable(By.id(id)))
+        //wait.until(ExpectedConditions.elementToBeClickable(By.id(id))) //not yet
     }
 
-    @org.testng.annotations.Test(priority=0)
-    public void test1(){
-       // To repair this tommorrow
-       Webpage_Important webImport = new Webpage_Important();
-       webImport.searchBarTesting1();
+    @Test(priority = 0, groups = "search")
+    public void test1() {
+        // To repair this tommorrow
+        Webpage_Important webImport = new Webpage_Important();
+        webImport.searchBarTesting1();
     }
 
-    @org.testng.annotations.Test(priority=1)
+    @Test(priority = 1, groups = "search")
     public void test12() {
 
         //To repair this tommorrow
@@ -43,7 +42,7 @@ public class Homework {
         searchTesting.searchBarTesting2();
     }
 
-    @org.testng.annotations.Test(priority = 2)
+    @Test(priority = 2,groups = "search2")
     public void test2() {
         //To repair this tommorrow
         Webpage_elements textOnPageDestination = new Webpage_elements();
